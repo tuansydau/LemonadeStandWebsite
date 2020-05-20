@@ -35,6 +35,7 @@ python manage.py runserver
 5. Access the server in your browser with either 127.0.0.1:8000 or localhost:8000 in the address bar.
 
 <h3>Completed Tasks</h3>
+
 - ERD, database design (subpar), models
 
 - Sales Entry only through admin page (entered sample data)
@@ -42,9 +43,13 @@ python manage.py runserver
 - Minor Graphics Update
 
 <h3>Attempts at doing tasks</h3>
+
 - Made a sales report template (localhost:8000/sales/view) without date/employee selection, dynamic total, commission calculation 
+
 - Made a user registration and login/logout system (this was in an attempt to automate the "salesperson" field in conjunction with the django.contrib.auth users table and employees table, which failed spectacularly)
+
 - Registration and login forms glow red when invalid information is inputted
+
 - Success message shows up (after registration) but does not go away after 5 seconds. Is also not clear
 
 <h3>Next Steps</h3>
