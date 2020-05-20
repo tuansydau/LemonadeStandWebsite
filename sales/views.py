@@ -37,11 +37,11 @@ def sales_form(request):
 #     items = list(item.objects.all())
 #     return render(request, 'sales/form.html', {'items': items})
 
-# def view(request):
-#     Order = order.objects.all()[0]
-#     context = {"Order": Order}
-#     template = "sales/view.html"
-#     return render(request, template, context)
+def view(request):
+    Order = order.objects.all()[0]
+    context = {"Order": Order}
+    template = "sales/view.html"
+    return render(request, template, context)
 
 # def add_to_order(request, slug):
 #     order = Order.objects.all()[0]

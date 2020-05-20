@@ -27,7 +27,7 @@ class orderItem(models.Model):
 
 class order(models.Model):
     orderID = models.AutoField(primary_key=True)
-    items = models.ManyToManyField(item)
+    items = models.ManyToManyField(orderItem)
     orderTime = models.DateTimeField(default=timezone.now)
     salesperson = models.ForeignKey(User, on_delete=models.CASCADE)
 
