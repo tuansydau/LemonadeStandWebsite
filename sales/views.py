@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.http import HttpResponse
 from .forms import OrderForm, UserCreationForm, LoginForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.urls import reverse
 from .models import orderItem, item, employee, order
 
 def login(request):
@@ -31,10 +32,30 @@ def sales_form(request):
 
     return render(request, template_name, {'form':form})
 
-@login_required
-def sales_form(request):
-    items = list(item.objects.all())
-    return render(request, 'sales/form.html', {'items': items})
+# @login_required
+# def sales_form(request):
+#     items = list(item.objects.all())
+#     return render(request, 'sales/form.html', {'items': items})
+
+# def view(request):
+#     Order = order.objects.all()[0]
+#     context = {"Order": Order}
+#     template = "sales/view.html"
+#     return render(request, template, context)
+
+# def add_to_order(request, slug):
+#     order = Order.objects.all()[0]
+#     try:
+#         product = item.objects.get(slug=slug)
+#     except item.DoesNotExist:
+#         pass
+#     except:
+#         pass
+#     if not product in order.products.all():
+#         order.item.add(product)
+#     else:
+#         order.products.remove(product)
+#     return HttpResponseRedirect(reverse('sales-view'))
 
 @login_required
 def sales_report(request):

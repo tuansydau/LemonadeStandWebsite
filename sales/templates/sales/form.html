@@ -2,53 +2,10 @@
 <!--Needs list of items, quantity, dynamically updating price-->
 {% block content %}
 
-<div class="card">
-    <div class="card-header">
-        <h5>Add Products to Bill:</h5>
-    </div>
-
-    <div class="panel-heading">
-        <h4 class="panel-title"><strong>Order summary</strong></h4>
-    </div>
-    <div class="panel-body">
-        <div class="table-responsive">
-            <table class="table table-condensed">
-                <thead>
-                    <tr>
-                        <td><strong>Item</strong></td>
-                        <td class="text-right"><strong>Price</strong></td>
-                    </tr>
-                </thead>
-                <tbody id="summary-table-body">
-                    <tr id="total-tr">
-                        <div class="card-body">
-                            {% for item in items %}
-                            <a href="#" class="btn btn-outline-secondary">
-                                {{ item.name }} (${{ item.price }})
-                            </a>
-                            {% endfor %}
-                        </div>
-                    </tr>
-                    </tr>
-                    <tr id="total-tr">
-                        <td class="text-right"><strong>Total: </strong></td>
-                        <td class="text-right"><strong>$0 </strong></td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="btn-group special" role="group">
-                {% csrf_token %}
-            </div>
-        </div>
-    </div>
-</div>
-
-
-</div>
-
-
-<tbody id="summary-table-body">
-
-</tbody>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" name="submit-form">Continue</button>
+</form>
 
 {% endblock content %}

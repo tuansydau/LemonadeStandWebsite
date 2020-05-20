@@ -1,0 +1,28 @@
+{% extends 'sales/base.html' %}
+{% block content %}
+
+<table class="table">
+
+Order #{{ Order.orderID }}
+<thead>
+<th>Item</th>
+<th>Price</th>
+</thead>
+
+<tfoot>
+    <tr>
+        <td>
+            <td>
+                Total: $0
+            </td>            
+        </td>
+    </tr>
+</tfoot>
+
+{% for item in Order.items.all %}
+
+<tr><td> {{ item }} </td><td>{{ item.price }}</td></tr>
+{% endfor %}
+</table>
+
+{% endblock content %}
