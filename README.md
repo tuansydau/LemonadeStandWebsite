@@ -37,7 +37,7 @@ python manage.py runserver
 
 <h3>Login details</h3>
 
-Due to an incomplete integration with the database system, the login system does nothing but add burden to this app. However, it's not too large of a burden. To login, use username ```admin``` and password ```admin```. 
-
+Due to an incomplete integration with the database system, the login system does nothing but add burden to this app. However, it's not too large of a burden. To login, use username ```admin``` and password ```admin``` at any login page, including the administration site.
 
 Thank you for the coding challenge!
+Tuan Dau
