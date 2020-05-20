@@ -39,6 +39,12 @@ python manage.py runserver
 
 Due to an incomplete integration with the database system, the login system does nothing but add burden to this app. However, it's not too large of a burden. To login, use username ```admin``` and password ```admin``` at any login page, including the administration site.
 
-Thank you for the coding challenge!
+
+<h3>Note for common database errors</h3>
+
+If any fields are unable to be found, delete db.sqlite3 in the project main directory. Then run ```python manage.py runserver```. An admin account is required to repopulate the database, create one by running ```python manage.py createsuperuser``` and filling out the fields as desired.
+
+
+Thank you for the coding challenge
 
 <i>Tuan Dau</i>
