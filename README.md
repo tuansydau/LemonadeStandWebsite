@@ -40,6 +40,10 @@ python manage.py runserver
 Due to an incomplete integration with the database system, the login system does nothing but add burden to this app. However, it's not too large of a burden. To login, use username ```admin``` and password ```admin``` at any login page, including the administration site.
 
 
+<h3>Filtering sales report</h3>
+
+To change the employee and date range of the generated sales report, edit the date__range and salesperson__name fields in ```project/sales/views.py``` line 71 with any of the available employees in the database (all the challenge's sample employee names). Refresh the sales report page.
+
 <h3>Note for common database errors</h3>
 
 If any fields are unable to be found, delete db.sqlite3 in the project main directory. Then run ```python manage.py runserver```. An admin account is required to repopulate the database, create one by running ```python manage.py createsuperuser``` and filling out the fields as desired.
