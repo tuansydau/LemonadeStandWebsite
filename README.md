@@ -62,4 +62,4 @@ python manage.py runserver
 
 - Reduce redundancy in html templates by adding header to base.html and moving the content block in base html to within the header
 
-- Research how to get input from forms to filter tuples from models
+- Research how to get input from forms to filter tuples from models (for sales report)
