@@ -1,6 +1,6 @@
 # MEGAComfort-Backend
 
-This is a website created using HTML, CSS, Django for the MEGAComfort Backend Development Challenge. Unfortunately, I was unable to complete the challenge, but am still submitting my project. I'm grateful to have taken this challenge; the challenge was quite fun and I've learned a lot during the process of making this app. 
+This is a website created using HTML, CSS, Django for the MEGAComfort Backend Development Challenge. Unfortunately I was unable to complete the challenge, but I am still very proud of the progress that I have made, given that I started off compeltely new to Django. I'm grateful to have taken this challenge; the challenge was quite fun and I've learned a lot during the process of making this app. 
 
 <h3>How to run</h3>
 
@@ -50,6 +50,16 @@ python manage.py runserver
 
 - Registration and login forms glow red when invalid information is inputted
 
-- Success message shows up (after registration) but does not go away after 5 seconds. Is also not clear
-
 <h3>Next Steps</h3>
+
+- Redo database design so that it is possible to use Django forms in order to have multiple items in an order, and to be able to choose quantities of each item
+
+- Create the sales entry form in its entirety
+
+- Create the sales report in its entirety
+
+- Create a function to calculate order totals on sales report
+
+- Reduce redundancy in html templates by adding header to base.html and moving the content block in base html to within the header
+
+- Research how to get input from forms to filter tuples from models
