@@ -42,7 +42,6 @@ def sales_form(request):
 
 
 def submit_sales_form(request):
-    print("form is submitted")
     items = request.POST['items']
     salesperson = request.POST['salesperson']
 
@@ -64,16 +63,13 @@ def submit_sales_form(request):
 
     orderInfo.save()
 
-    return render(request, "sales/form.html", {'form': OrderForm()})
+    return render(request, 'sales/form.html', {'form': OrderForm()})
 
-# @login_required
-# def sales_form(request):
-#     items = list(item.objects.all())
-#     return render(request, 'sales/form.html', {'items': items})
 
 @login_required
 def sales_report(request):
-    Order = order.objects.filter(salesperson__name="John Rice", orderTime__range=["2011-01-11", "2020-05-26"])
+    Order = order.objects.filter(salesperson__name='John Rice', orderTime__range=[
+                                 '2011-01-11', '2020-05-26'])
 
     commissionsTotals = 0
     for ordernum in Order.all():
@@ -81,12 +77,12 @@ def sales_report(request):
 
     print(commissionsTotals)
 
-    context = {"Order": Order, 
-                "totals": sum([instance.total() for instance in Order.all()]),
-                "commissionsTotals": commissionsTotals
-                }
-    
-    template = "sales/report.html"
+    context = {'Order': Order,
+               'totals': sum([instance.total() for instance in Order.all()]),
+               'commissionsTotals': commissionsTotals
+               }
+
+    template = 'sales/report.html'
     return render(request, template, context)
 
 # debug if time allows
@@ -103,8 +99,3 @@ def sales_report(request):
 #     else:
 #         order.products.remove(product)
 #     return HttpResponseRedirect(reverse('sales-view'))
-
-
-# @login_required
-# def sales_report(request):
-#     return render(request, 'sales/report.html')

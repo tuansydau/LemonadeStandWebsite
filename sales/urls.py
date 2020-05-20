@@ -5,6 +5,5 @@ urlpatterns = [
     path('', views.home, name='sales-home'),
     path('sales/form/', views.sales_form, name='sales-form'),
     path('sales/report/', views.sales_report, name='sales-report'),
-# a testing page for sales/report/   path('sales/view/', views.view, name='sales-view'),
     path('submit_sales_form/', views.submit_sales_form, name='sales-form-submit')
 ]
