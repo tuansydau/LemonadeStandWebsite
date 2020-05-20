@@ -1,0 +1,28 @@
+{% extends 'sales/base.html' %}
+{% block content %}
+    <header class="masthead text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="" />
+            <h1 class="masthead-heading mb-0" style="color:black">Sales Team Tools</h1>
+            </div>
+            <p class="masthead-subheading mb-0"></p>
+        </div>
+
+        <form action="{% url 'users-register' %}">
+            <input type="submit" value="Create a staff account"/>
+        </form>
+
+        <form action="{% url 'sales-form' %}">
+            <input type="submit" value="Cash Register" />
+        </form>
+        
+        <form action="{% url 'sales-report' %}">
+            <input type="submit" value="Create Sales Reports" />
+        </form>
+
+        <form action="admin/">
+            <input type="submit" value="Administrator Login" />
+        </form>
+
+    </header>
+{% endblock content %}
