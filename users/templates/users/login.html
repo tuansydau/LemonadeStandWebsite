@@ -1,13 +1,11 @@
 {% extends 'sales/base.html' %}
 {% block content %}
-<header class="masthead text-white text-center">
+<header class="masthead text-center">
     <form method="POST">
         {% csrf_token %}
         <p class="masthead-subheading font-weight-light mb-0" style="color:black">Sign in</p>
         {{ form.as_p }}
         <button type="submit" name="submit-form">Continue</button>
-        <div class="border-top pt-3">Don't have an account? Register <a href="{% url 'users-register' %}" style="color:black"> here</a>.</div>
-
-
+        <div class="border-top pt-3">Don't have an account? Register <a href="{% url 'users-register' %}"> here</a>.</div>
     </form>
 {% endblock content %}
