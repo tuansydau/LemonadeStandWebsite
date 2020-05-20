@@ -1,13 +1,17 @@
 {% extends 'sales/base.html' %}
-
+{% load crispy_forms_tags %}
 {% block content %}
 <header class="masthead text-center">
-    <form method="POST">
-        {% csrf_token %}
-        <p class="masthead-subheading font-weight-light mb-0" style="color:black">Create an account</p>
-        {{ form.as_p }}
-        <button type="submit" name="submit-form">Sign up</button>
-    </form>
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <p class="masthead-subheading font-weight-light mb-0" style="color:black">Create an account</p>
+            <fieldset class="form-group">
+                {{ form|crispy }}
+            </fieldset>
+            <button type="submit" name="submit-form">Sign up</button>
+        </form>
+    </div>
     <div class="border-top pt-3">Do you already have an account? If so, <a href="{% url 'sales-login' %}"
             style="color:black">sign in.</a>
         <p>Please note that all accounts will be created as Juniors. If you are a Senior or a Manager, contact a network
