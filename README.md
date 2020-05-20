@@ -36,7 +36,9 @@ python manage.py runserver
 
 <h3>Completed Tasks</h3>
 - ERD, database design (subpar), models
+
 - Sales Entry only through admin page (entered sample data)
+
 - Minor Graphics Update
 
 <h3>Attempts at doing tasks</h3>
