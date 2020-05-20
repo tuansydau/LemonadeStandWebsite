@@ -27,9 +27,16 @@ class orderItem(models.Model):
 
 class order(models.Model):
     orderID = models.AutoField(primary_key=True)
-    items = models.ManyToManyField(orderItem)
+    items = models.ManyToManyField(item, blank=True)
     orderTime = models.DateTimeField(default=timezone.now)
-    salesperson = models.ForeignKey(User, on_delete=models.CASCADE)
+    salesperson = models.ForeignKey(employee, on_delete=models.CASCADE)
+
+    def total(self):
+        orderTotal = sum([item.price for item in self.items.all()])
+        return orderTotal
+           
+    def commissions(self):
+        return "%.2f" % (self.total() * self.salesperson.commission)
 
     def __str__(self):
         return 'Order #{}'.format(self.orderID)
