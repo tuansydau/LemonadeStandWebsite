@@ -35,6 +35,7 @@ def sales_form(request):
         if form.is_valid():
             text = form.cleaned_data['post']
             args = {'form': form, 'text': text}
+            messages.success(request, f'Your order has been saved.')
             return render(request, self.template_name, {'form': form})
 
     return render(request, template_name, {'form': form})
@@ -70,20 +71,25 @@ def submit_sales_form(request):
 #     items = list(item.objects.all())
 #     return render(request, 'sales/form.html', {'items': items})
 
+@login_required
+def sales_report(request):
+    Order = order.objects.filter(salesperson__name="John Rice", orderTime__range=["2011-01-11", "2020-05-26"])
 
-def view(request):
-    Order = order.objects.filter(salesperson__name="Larry Long", orderTime__range=["2011-01-11", "2020-05-26"])
+    commissionsTotals = 0
+    for ordernum in Order.all():
+        commissionsTotals = commissionsTotals+ordernum.commissions()
 
-    def all_orders_total(self):
-        allOrdersTotal = 0.00
-        allOrdersTotal = sum([instance.total for instance in self.Order.all()])
-        return allOrdersTotal
+    print(commissionsTotals)
 
-    context = {"Order": Order}
-    template = "sales/view.html"
+    context = {"Order": Order, 
+                "totals": sum([instance.total() for instance in Order.all()]),
+                "commissionsTotals": commissionsTotals
+                }
+    
+    template = "sales/report.html"
     return render(request, template, context)
 
-
+# debug if time allows
 # def add_to_order(request, slug):
 #     order = Order.objects.all()[0]
 #     try:
@@ -99,6 +105,6 @@ def view(request):
 #     return HttpResponseRedirect(reverse('sales-view'))
 
 
-@login_required
-def sales_report(request):
-    return render(request, 'sales/report.html')
+# @login_required
+# def sales_report(request):
+#     return render(request, 'sales/report.html')

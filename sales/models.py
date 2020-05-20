@@ -34,9 +34,9 @@ class order(models.Model):
     def total(self):
         orderTotal = sum([item.price for item in self.items.all()])
         return orderTotal
-           
-    def commissions(self):
-        return "%.2f" % (self.total() * self.salesperson.commission)
 
+    def commissions(self):
+        return (self.total() * self.salesperson.commission)
+        
     def __str__(self):
         return 'Order #{}'.format(self.orderID)
