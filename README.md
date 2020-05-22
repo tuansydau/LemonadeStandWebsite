@@ -18,7 +18,9 @@ git clone https://github.com/tuansydau/MEGAComfort-Backend.git
 cd MEGAComfort-Backend
 ```
 
-3. Migrate the database.
+3. Install the required libraries with either ```pip install -r requirements.txt``` or ```pip install django```.
+
+4. Migrate the database.
 
 ```
 python manage.py makemigrations
@@ -28,13 +30,13 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-4. Run server
+5. Run server
 
 ```
 python manage.py runserver
 ```
 
-5. Access the server in your browser with either 127.0.0.1:8000 or localhost:8000 in the address bar.
+6. Access the server in your browser with either 127.0.0.1:8000 or localhost:8000 in the address bar.
 
 
 <h3>Login details</h3>
