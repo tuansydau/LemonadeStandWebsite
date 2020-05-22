@@ -4,6 +4,10 @@ from django.contrib import messages
 from .forms import UserRegisterForm
 
 
+<<<<<<< HEAD
+=======
+# CR: Do we really want to allow any random user to register as a seller in the system?
+>>>>>>> d79f559d365d23b28060e8b43b6918a4df3b5588
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)

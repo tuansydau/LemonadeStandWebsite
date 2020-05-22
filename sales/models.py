@@ -4,6 +4,10 @@ from django.contrib.auth.models import User
 from django.conf import settings
 
 
+<<<<<<< HEAD
+=======
+# CR: model names should be in CameCase
+>>>>>>> d79f559d365d23b28060e8b43b6918a4df3b5588
 class item(models.Model):
     name = models.CharField(max_length=300)
     price = models.DecimalField(decimal_places=2, max_digits=7)
@@ -42,5 +46,11 @@ class order(models.Model):
     def commissions(self):
         return (self.total() * self.salesperson.commission)
 
+    # CR: I see that you decided to implement commission calculation in the report.
+    # What happens if the employee was promoted? Should his commission recalculated retroactively?
+
+    # CR: I am not sure that ManyToMany is the right relationship in this case...
+    # CR: Please note that your migrations are not sync-ed with the models.
+    # python manage.py makemigrations generated a new migration script...
     def __str__(self):
         return 'Order #{}'.format(self.orderID)
