@@ -50,6 +50,12 @@ To change the employee and date range of the generated sales report, edit the da
 
 If any fields are unable to be found, delete db.sqlite3 in the project main directory. Then run ```python manage.py runserver```. An admin account is required to repopulate the database, create one by running ```python manage.py createsuperuser``` and filling out the fields as desired.
 
+<h3>ER Diagram</h3>
+
+Final design: http://prntscr.com/sm0irh
+
+Intended design: http://prntscr.com/sm0ham
+
 
 Thanks for your time, please feel free to reach me at tuansdau@gmail.com in case of any issues that you may come across.
 
