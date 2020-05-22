@@ -18,7 +18,9 @@ git clone https://github.com/tuansydau/MEGAComfort-Backend.git
 cd MEGAComfort-Backend
 ```
 
-3. Install the required libraries with either ```pip install -r requirements.txt``` or ```pip install django```.
+3. Install the required libraries. 
+
+```pip install -r requirements.txt``` 
 
 4. Migrate the database.
 
