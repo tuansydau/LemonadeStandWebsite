@@ -1,8 +1,7 @@
 # MEGAComfort-Backend
 
-This is a website created using HTML, CSS, Django for the MEGAComfort Backend Development Challenge. Unfortunately I was unable to complete the challenge, but have made enough progress to warrant a submission. My sales form will create orders, but any items chosen will only have a quantity of one. CTRL+left click in order to choose multiple items to add to an order. 
+This is a Store management website created using HTML, CSS, and Django. 
 
-I'm grateful to have taken this challenge; the challenge was quite fun and I've learned a lot during the process of making this website. 
 
 <h3>How to run</h3>
 
@@ -61,8 +60,5 @@ If any fields are unable to be found, delete db.sqlite3 in the project main dire
 Final design: http://prntscr.com/sm0irh
 
 Intended design: http://prntscr.com/sm0ham
-
-
-Thanks for your time, please feel free to reach me at tuansdau@gmail.com in case of any issues that you may come across.
 
 <i>Tuan Dau</i>
