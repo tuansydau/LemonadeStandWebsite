@@ -1,4 +1,4 @@
-# MEGAComfort-Backend
+# ShopFlow
 
 This is a Store management website created using HTML, CSS, and Django. 
 
